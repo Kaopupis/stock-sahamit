@@ -1,0 +1,117 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Michroma&family=Orbitron:wght@700;900&family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#3F57A8;--mag:#B061A8;--cyan:#6fd8ff;--gold:#ffd27a;--ink:#06061a}
+body{width:1200px;height:1600px;background:var(--ink);font-family:'Kanit',sans-serif;color:#fff}
+.poster{position:relative;width:1200px;height:1600px;overflow:hidden;
+ background:radial-gradient(800px 700px at 80% 45%,rgba(120,80,220,.42),transparent 62%),radial-gradient(700px 600px at 5% 8%,rgba(63,87,168,.45),transparent 60%),radial-gradient(900px 500px at 50% 100%,rgba(176,97,168,.28),transparent 60%),linear-gradient(180deg,#0a0c2c,#090822 55%,#05051a)}
+.hex{position:absolute;inset:0;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16z M28 64v33' fill='none' stroke='%237f8cff' stroke-width='1'/%3E%3C/svg%3E");-webkit-mask-image:radial-gradient(700px 800px at 70% 40%,#000 20%,transparent 75%)}
+.streak{position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(111,216,255,.10) 42%,rgba(176,97,168,.16) 48%,transparent 60%)}
+.scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.022) 0 1px,transparent 1px 4px)}
+.abs{position:absolute}
+.cut{clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
+.glass{background:linear-gradient(135deg,rgba(255,255,255,.11),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.18)}
+.top{position:absolute;top:40px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.logo{height:84px}
+.chip{font-family:'Chakra Petch';font-weight:700;letter-spacing:3px;font-size:26px;padding:10px 22px;border:2px solid rgba(111,216,255,.8);color:var(--cyan);background:rgba(111,216,255,.1);clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)}
+.kicker{font-family:'Chakra Petch';font-weight:700;font-size:28px;letter-spacing:7px;color:#c3ccff;display:flex;align-items:center;gap:14px}
+.kicker:before{content:"";width:44px;height:3px;background:linear-gradient(90deg,var(--cyan),transparent)}
+.orb{font-family:'Orbitron';font-weight:900;line-height:.95}
+.t1{font-size:132px;background:linear-gradient(180deg,#fff 30%,#c4cdff);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(120,140,255,.55))}
+.t2{font-size:106px;background:linear-gradient(90deg,#7d8cff,var(--mag) 70%,#d77fd0);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 20px rgba(176,97,168,.6));margin-top:4px}
+.head{left:56px;top:150px;width:760px}
+.sub{margin-top:22px;font-size:42px;font-weight:500;line-height:1.3}
+.hl{color:var(--gold);font-weight:700}
+.xbg{right:-80px;top:330px;width:700px;height:640px;opacity:.95;filter:drop-shadow(0 0 30px rgba(176,97,168,.55))}
+.person{position:absolute;right:-70px;top:470px;height:770px;filter:drop-shadow(0 0 28px rgba(111,216,255,.35)) drop-shadow(0 0 2px rgba(255,255,255,.6))}
+.pfade{left:520px;right:0;top:1080px;height:170px;background:linear-gradient(180deg,transparent,#08071f 88%)}
+.skills{left:56px;top:615px;width:540px}
+.skills h3{font-size:46px;font-weight:700;line-height:1.1;margin-bottom:16px}
+.skills h3 .orb{font-size:66px;background:linear-gradient(90deg,var(--gold),#ff9d5c);-webkit-background-clip:text;color:transparent;vertical-align:-5px}
+.sk{display:flex;align-items:center;gap:18px;padding:16px 20px;margin-bottom:14px}
+.sk img{width:84px;height:84px;flex:none;border-radius:18px}
+.sk b{display:block;font-family:'Chakra Petch';font-size:40px;font-weight:700;line-height:1.05}
+.sk span{font-size:26px;color:#dde1fb}
+.s1 b{color:#ffb48a}.s2 b{color:#9fd0ff}
+.topics{left:56px;width:560px}
+.topics .tt{font-size:32px;font-weight:700;margin-bottom:10px;color:#c3ccff}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{font-family:'Chakra Petch';font-size:26px;font-weight:700;padding:6px 14px;border:1.5px solid rgba(143,160,255,.55);background:rgba(90,110,230,.15);clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)}
+.pill.m{border-color:rgba(176,97,168,.7);background:rgba(176,97,168,.18)}
+.spk{right:56px;top:1030px;text-align:right;z-index:3}
+.spk .role{display:inline-block;font-family:'Chakra Petch';font-weight:700;font-size:22px;letter-spacing:3px;color:var(--ink);background:linear-gradient(90deg,var(--cyan),#a9b6ff);padding:4px 14px;margin-bottom:6px}
+.spk .nm{font-size:44px;font-weight:700;line-height:1.1;text-shadow:0 2px 16px rgba(0,0,0,.9)}
+.spk .ex{font-size:28px;font-weight:500;text-shadow:0 2px 12px rgba(0,0,0,.9)}
+.spk .ex b{color:var(--gold)}
+.band{left:56px;right:56px;top:1222px;display:grid;grid-template-columns:1fr 350px 200px;gap:14px;align-items:stretch}
+.det{padding:14px 20px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.row{display:flex;gap:12px;align-items:baseline;font-size:31px;font-weight:600;line-height:1.25}
+.row i{font-style:normal;font-family:'Chakra Petch';font-weight:700;font-size:18px;letter-spacing:2px;color:var(--cyan);width:64px;flex:none}
+.price{padding:14px 18px;text-align:center;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,rgba(63,87,168,.8),rgba(176,97,168,.8));border:1px solid rgba(255,255,255,.35)}
+.price .eb{font-family:'Chakra Petch';font-weight:700;font-size:24px;letter-spacing:5px;color:var(--gold)}
+.price .num{font-family:'Orbitron';font-weight:900;font-size:70px;white-space:nowrap;line-height:1.05;text-shadow:0 0 22px rgba(255,255,255,.35)}
+.price .num small{font-family:'Kanit';font-size:30px;font-weight:600;margin-left:6px}
+.price .old{font-size:26px;font-weight:500}
+.price .old s{color:#ffc0cc;text-decoration-thickness:3px}
+.qr{background:#fff;border-radius:18px;padding:12px;text-align:center;box-shadow:0 0 0 4px #06c755,0 0 30px rgba(6,199,85,.5)}
+.qr img{width:100%;display:block}
+.qr div{font-size:22px;white-space:nowrap;font-weight:700;color:#06061a;margin-top:2px}
+.close{left:40px;right:40px;top:1478px;text-align:center;font-size:34px;font-weight:700;line-height:1.2}
+.close b{color:var(--gold)}.close span{color:var(--cyan)}
+.contact{position:absolute;left:0;right:0;bottom:0;height:64px;display:flex;align-items:center;justify-content:center;gap:26px;background:linear-gradient(90deg,rgba(63,87,168,.7),rgba(176,97,168,.7));border-top:1px solid rgba(255,255,255,.25);font-size:30px}
+.contact span{display:flex;align-items:center;gap:8px}.contact i{font-style:normal;font-family:'Chakra Petch';font-weight:700;font-size:19px;color:var(--cyan)}
+.contact b{font-weight:700}.dot{width:8px;height:8px;background:rgba(255,255,255,.55);transform:rotate(45deg)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <linearGradient id="ga" gradientUnits="userSpaceOnUse" x1="880" x2="1330" y1="0" y2="0"><stop offset="0" stop-color="#3F57A8"/><stop offset="1" stop-color="#B061A8"/></linearGradient>
+ <linearGradient id="gp" gradientUnits="userSpaceOnUse" x1="1380" x2="1720" y1="0" y2="0"><stop offset="0" stop-color="#B061A8"/><stop offset="1" stop-color="#3F57A8"/></linearGradient>
+ <symbol id="xmark" viewBox="690 20 1160 990"><path d="M708 27L1388 528L775 1000L1087 532Z" fill="url(#ga)"/><path d="M1517 125H1833L1452 468L1302 341Z" fill="url(#gp)"/><path d="M1300 717L1451 590L1831 934H1516Z" fill="url(#gp)"/></symbol>
+</defs></svg>
+<section class="poster" id="poster">
+ <div class="hex"></div><div class="streak"></div>
+ <svg class="abs xbg"><use href="#xmark"/></svg>
+ <img class="person" src="assets/person.png">
+ <div class="abs pfade"></div>
+ <div class="top">
+  <svg class="logo" viewBox="40 20 1810 990"><use href="#xmark" x="690" y="20" width="1160" height="990"/>
+   <text x="63" y="595" font-family="Michroma" font-size="178" fill="#fff" textLength="890" lengthAdjust="spacingAndGlyphs">VERTA</text>
+   <text x="1568" y="595" font-family="Michroma" font-size="178" fill="#fff" textLength="229" lengthAdjust="spacingAndGlyphs">AI</text></svg>
+  <div class="chip">1-DAY WORKSHOP</div>
+ </div>
+ <div class="abs head">
+  <div class="kicker">GUARDIAN AI SERIES</div>
+  <div class="orb t1" style="margin-top:16px">AI AGENT</div>
+  <div class="orb t2">FOR CEO</div>
+  <div class="sub">เปลี่ยน AI จาก "ผู้ช่วยตอบ"<br>ให้เป็น <span class="hl">"ทีมงานที่ลงมือทำแทนคุณ"</span></div>
+ </div>
+ <div class="abs skills" id="skills">
+  <h3><span class="orb">1</span> วัน ได้ <span class="orb">2</span> สกิล</h3>
+  <div class="sk s1 glass cut"><img src="assets/cowork.svg"><div><b>Claude Cowork</b><span>AI จัดการไฟล์และเอกสาร</span></div></div>
+  <div class="sk s2 glass cut"><img src="assets/codex.svg"><div><b>ChatGPT Codex</b><span>AI ใช้คอมพิวเตอร์แทนคุณ</span></div></div>
+ </div>
+ <div class="abs topics" id="topics">
+  <div class="tt">หัวข้อเด่น จาก 13 หัวข้อ · ลงมือทำจริง</div>
+  <div class="pills"><div class="pill">AI Agent for Business</div><div class="pill">AI Skill Builder</div><div class="pill">Scheduled Tasks</div><div class="pill">Computer Use</div><div class="pill m">Auto Facebook Page</div><div class="pill m">AI Lead Generation</div></div>
+ </div>
+ <div class="abs spk">
+  <div class="role">AI TRAINING EXPERT</div>
+  <div class="nm">เก้าภูพิชญ์ บัวหิรัญพัทธ์</div>
+  <div class="ex">เทรนมาแล้ว <b>มากกว่า 100 องค์กร</b></div>
+ </div>
+ <div class="abs band">
+  <div class="det glass cut">
+   <div class="row"><i>DATE</i>อาทิตย์ 20 ธันวาคม 2569</div>
+   <div class="row"><i>TIME</i>09:00 – 17:00 น.</div>
+   <div class="row"><i>VENUE</i>ibis Bangkok Ratchada</div>
+   <div class="row"><i>SEATS</i><span>จำกัด <span class="hl">20 ท่าน</span></span></div>
+  </div>
+  <div class="price cut"><div class="eb">EARLY BIRD</div><div class="num">4,990<small>บาท</small></div><div class="old">จากปกติ <s>6,990 บาท</s></div></div>
+  <div class="qr"><img src="assets/line_qr.png"><div>สแกนแอด LINE</div></div>
+ </div>
+ <div class="abs close"><b>พี่เก้า Verta X AI</b> <span>·</span> เข้าใจองค์กร สอนจับมือทำ นำไปใช้ได้จริง</div>
+ <div class="contact"><span><i>TEL</i><b>083-891-6541</b></span><div class="dot"></div><span><i>LINE OA</i><b>@vertaxai</b></span><div class="dot"></div><span><b>www.vertaxai.app</b></span></div>
+ <div class="scan"></div>
+</section>
+<script>document.fonts.ready.then(()=>{const s=document.getElementById('skills');document.getElementById('topics').style.top=(615+s.offsetHeight+8)+'px';window.__dbg={topicsEnd:615+s.offsetHeight+8+document.getElementById('topics').offsetHeight,bandEnd:1222+document.querySelector('.band').offsetHeight};window.__done=1})</script>
+</body></html>
