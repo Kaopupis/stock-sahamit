@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1027">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#3d58a8"/><stop offset=".6" stop-color="#ad5fa8"/><stop offset="1" stop-color="#3d58a8"/></linearGradient>
+  <linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#ad5fa8"/><stop offset="1" stop-color="#3d58a8"/></linearGradient></defs>
+  <polygon points="707,27 1388,528 775,998 1085,532" fill="url(#g)"/>
+  <polygon points="1302,341 1517,125 1832,125 1452,468" fill="url(#g2)"/>
+  <polygon points="1300,717 1450,590 1830,933 1515,933" fill="url(#g2)"/>
+  <text x="60" y="595" font-family="Kanit, sans-serif" font-weight="500" font-size="182" letter-spacing="34" fill="#fff" textLength="890" lengthAdjust="spacingAndGlyphs">VERTA</text>
+  <text x="1565" y="595" font-family="Kanit, sans-serif" font-weight="500" font-size="182" letter-spacing="30" fill="#fff" textLength="235" lengthAdjust="spacingAndGlyphs">AI</text>
+</svg>
